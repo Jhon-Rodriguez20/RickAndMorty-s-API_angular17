@@ -1,0 +1,30 @@
+<div>
+  <section class="container d-flex justify-content-center">
+    @if (!loading) {
+      <div class="card w-75 mt-5">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="{{personaje?.image}}" class="card-img-top w-100" alt="{{personaje?.name}}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+                @if (personaje?.status === 'Alive') {
+                  <h3 class="badge bg-success d-flex justify-content-center mb-4">{{personaje?.status}}</h3>
+                }
+                @if (personaje?.status === 'Dead') {
+                  <h3 class="badge bg-danger d-flex justify-content-center mb-4">{{personaje?.status}}</h3>
+                }
+                @if (personaje?.status === 'unknown') {
+                  <h3 class="badge bg-warning d-flex justify-content-center mb-4">{{personaje?.status}}</h3>
+                }
+              <p class="card-title"><span class="fw-bold fs-5">Name: </span>{{personaje?.name}}</p>
+              <p class="card-text"><span class="fw-bold fs-5">Species: </span>{{personaje?.species}}</p>
+              <p class="card-text"><span class="fw-bold fs-5">Gender: </span>{{personaje?.gender}}</p>
+              <p class="card-text"><span class="fw-bold fs-5">Created: </span>{{personaje?.created}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </section>
+</div>
